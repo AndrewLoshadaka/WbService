@@ -1,0 +1,35 @@
+.container {
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, #f5f5dc, #f2ddc6);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+h2 {
+  font-size: 24px;
+  font-family: monospace;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+button {
+  font-family: monospace;
+  background: linear-gradient(to bottom, #8b8c7a, #3b3b3b);
+  width: 250px;
+  padding: 0px 30px;
+  margin-right: 10px;
+  border: 1px solid #466e9c;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #7a7666, #383838);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #f0f8ff;
+}

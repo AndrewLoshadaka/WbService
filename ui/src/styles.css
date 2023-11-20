@@ -1,0 +1,7 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  background-color: #f7eae1;
+}

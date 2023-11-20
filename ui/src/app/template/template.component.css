@@ -1,0 +1,119 @@
+.example-form {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.example-full-width {
+  width: 100%;
+  height: 150px;
+}
+
+.example-full-width-template{
+  width: 100%;
+  height: 80px;
+}
+
+.template-textarea-wrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+textarea.textarea-wrapper{
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+mat-card, mat-card-title, mat-panel-title, textarea, .expanded-panel, mat-label{
+  font-family: monospace;
+}
+
+.expanded-panel{
+  max-height: 500px;
+  background-color: #ced1cd;
+}
+
+.edit-expanded-panel{
+  max-height: 500px;
+  background-color: #faf0e6;
+}
+
+.save-button{
+  text-align: center;
+  font-family: monospace;
+  font-size: 15px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: linear-gradient(to bottom, #8b8c7a, #3b3b3b);
+  transition: background-color 0.3s ease;
+  margin-right:  0px;
+}
+
+.save-button:hover {
+  background: linear-gradient(to bottom, #7a7666, #383838);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #f0f8ff;
+}
+
+.right-button:hover{
+  background: linear-gradient(to bottom, #7a7666, #383838);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.templates-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Кнопки сохранения и удаления */
+.left-button {
+  order: 1;
+}
+
+.right-button {
+  order: 2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0; /* Добавьте отступы по вертикали для разделения кнопок */
+}
+
+.container {
+  align-items: left;
+  text-align: left;
+  background: linear-gradient(to bottom, #f5f5dc, #f2ddc6);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+.title{
+  align-items: center;
+  text-align: left;
+  display: flex;
+  border-radius: 5px;
+}
+
+h2{
+  font-family: monospace;
+}
+
+.home-button{
+  margin-left: 80%;
+  background-color: #994000;
+  order: 2;
+}
+
+.home-button:hover{
+  transform: scale(1.05);
+  background: linear-gradient(to bottom, #7a7666, #383838);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,12 @@
+<div class="image-slider">
+  <button mat-icon-button (click)="showPreviousImage()" class="nav-button left-button">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="showNextImage()" class="nav-button right-button">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+  <img class="image" [src]="images[currentImageIndex].fullSize" />
+
+</div>

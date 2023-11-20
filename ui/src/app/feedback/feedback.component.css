@@ -1,0 +1,58 @@
+img {
+  margin: 0 10px;
+}
+
+img.mat-card-lg-image {
+  max-width: 123px;
+  max-height: 164px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+mat-expansion-panel.span.image-container {
+  max-height: 328px;
+  position: relative;
+  display: inline-block;
+}
+
+img.feedback-images {
+  max-width: 200px;
+  max-height: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+img.mat-card-lg-image:hover {
+  transform: scale(1.2); /* Увеличение размера изображения на 20% при наведении */
+}
+
+img.feedback-images:hover {
+  transform: scale(1.2);
+}
+
+.feedbackText{
+  font-weight: bold;
+}
+
+mat-card, mat-card-title, mat-card-subtitle, a, .feedbackText, mat-panel-title{
+  font-family: monospace;
+}
+
+mat-card{
+  background: linear-gradient(to bottom, #d0d9d0, #adb3a4);
+}
+
+mat-expansion-panel{
+  background-color: #ced1cd;
+}
+
+.inform-class{
+  margin-top: -50px;
+  margin-left: 50px;
+}
+
+.checkbox-container{
+  max-width: 50px;
+  margin-left: 0px;
+}
+

@@ -1,0 +1,71 @@
+<div class="modal-container" *ngIf="selectedFeedbacks.length > 0">
+  <mat-card class="modal-card">
+
+    <button mat-icon-button (click)="prevPage()" class="nav-button left-button">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <!-- Кнопка Вперед -->
+    <button mat-icon-button (click)="nextPage()" class="nav-button right-button">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+
+    <div class="mat-card-header-wrapper">
+    <mat-card-header >
+      <mat-card-title>Продукт: {{getCurrentFeedback().feedback.productDetails.productName}}</mat-card-title>
+      <mat-card-subtitle>Артикул: {{getCurrentFeedback().feedback.productDetails.nmId}}</mat-card-subtitle>
+      <mat-card-subtitle>Бренд: {{getCurrentFeedback().feedback.productDetails.brandName}}</mat-card-subtitle>
+      <mat-card-subtitle>Оценка: {{getCurrentFeedback().feedback.productValuation}}</mat-card-subtitle>
+      <mat-card-subtitle>
+        <a href="{{getCurrentFeedback().feedback.productDetails.wbUrl}}" target="_blank">Товар на WB</a>
+      </mat-card-subtitle>
+      <img class="mat-card-lg-image" src="{{getCurrentFeedback().feedback.productDetails.photoLink}}">
+    </mat-card-header>
+    </div>
+
+    <div class="mat-card-header-wrapper">
+    <mat-card-content class = "mat-card-text">
+      Отзыв:
+      <p class="feedbackText">
+        {{getCurrentFeedback().feedback.text}}
+      </p>
+    </mat-card-content>
+    </div>
+
+    <div *ngIf="getCurrentFeedback().feedback.photoLinks?.length > 0">
+      <mat-expansion-panel class="expanded-panel" [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Фото
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <span *ngFor="let img of getCurrentFeedback().feedback.photoLinks; let i = index">
+            <span class="image-container">
+                <img class="feedback-images" (click)="openPhotoModal(getCurrentFeedback().feedback.photoLinks, i)"
+                     [src]="img.fullSize"
+                     (mouseover)="expandImage()"
+                     (mouseout)="shrinkImage()">
+              </span>
+          </span>
+      </mat-expansion-panel>
+    </div>
+<br>
+
+    <mat-form-field class="selected-field">
+      <mat-label>Шаблоны ответов</mat-label>
+      <mat-select class="template-selected" [(ngModel)]="selectedValue">
+          <mat-option value="option" *ngFor="let item of templates; let i = index" [value]="item" (click)="getAnswerByTemplate(i)">
+            {{item.template}}
+          </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="textarea-wrapper">
+      <textarea [(ngModel)]="answerText"></textarea>
+    </div>
+
+    <button mat-button class="bottom-button" (click)="sendResponse()">
+      Отправить ответ</button>
+  </mat-card>
+</div>

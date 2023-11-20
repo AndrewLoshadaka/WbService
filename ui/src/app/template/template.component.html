@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="templates-container">
+    <br>
+    <div class="title">
+      <h2>Работа с шаблонами</h2>
+        <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="home-button" (click)="homeRedirect()">
+          <mat-icon>home</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+    </div>
+    <br>
+    <span>
+      <mat-expansion-panel class="expanded-panel" [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Добавить новый шаблон
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form class="example-form">
+          <mat-form-field class="example-full-width-template">
+            <mat-label>Шаблон ответа</mat-label>
+            <textarea class="template-textarea-wrapper" matInput placeholder="Шаблон" [(ngModel)]="newTemplateText" [ngModelOptions]="{standalone: true}"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Комментарий</mat-label>
+            <textarea class="textarea-wrapper" matInput placeholder="Ответ" [(ngModel)]="newAnswerText" [ngModelOptions]="{standalone: true}"></textarea>
+          </mat-form-field>
+        </form>
+        <div class="button-container">
+          <button mat-button class="save-button" (click)="saveTemplate()">Сохранить</button>
+        </div>
+      </mat-expansion-panel>
+
+      <br>
+
+      <div *ngFor="let temp of templatesData; let i = index">
+        <mat-expansion-panel class="edit-expanded-panel" >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{temp.template}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width-template">
+                  <mat-label>Шаблон ответа</mat-label>
+                  <textarea class="template-textarea-wrapper" matInput [(ngModel)]="temp.template" [ngModelOptions]="{standalone: true}">{{temp.template}}</textarea>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Комментарий</mat-label>
+                  <textarea class="textarea-wrapper" matInput [(ngModel)]="temp.answer" [ngModelOptions]="{standalone: true}">{{temp.answer}}</textarea>
+                </mat-form-field>
+              </form>
+
+
+            <div class="button-container">
+              <button mat-fab class="right-button" color="primary" aria-label="Example icon button with a delete icon" (click)="openDeleteConfirmationDialog(i)">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+              <button mat-button class="left-button save-button" (click)="saveEditTemplate(i)">Сохранить изменения</button>
+            </div>
+             <br>
+          </mat-expansion-panel>
+        <br>
+
+      </div>
+
+    </span>
+</div>
+</div>
+
